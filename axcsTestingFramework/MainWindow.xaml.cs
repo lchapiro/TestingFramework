@@ -28,14 +28,15 @@ namespace TestingFramework
             if (!string.IsNullOrEmpty(sInputFile))
                 _mainModel.BuildModelFromFile(sInputFile);
 
-            CreateDataGrid();
+            CreateDataGrid(true);
+
+            btnNew_Click(null, null);
+            btnDelete.IsEnabled = false;
         }
 
-        private void CreateDataGrid()
+        private void CreateColumnDef()
         {
-            // Clear grid
             grdData.ColumnDefinitions.Clear();
-            grdData.RowDefinitions.Clear();
 
             // Create Columns
             int nCol = 0;
@@ -124,6 +125,22 @@ namespace TestingFramework
 
             txtBlock.Tag = null;
             grdData.Children.Add(txtBlock);
+        }
+
+        private void CreateRowDef()
+        {
+            grdData.RowDefinitions.Clear();
+
+            RowDefinition gridRow = new RowDefinition();
+            gridRow.Height = new GridLength(25);
+            grdData.RowDefinitions.Add(gridRow);
+
+            if (_mainModel.GetTestRows().Count < 1)
+                return;
+
+            // Create Columns
+            int nCol = 0;
+            int nRow = 0;
 
             // Create Data Rows
             foreach (TestClass oTest in _mainModel.GetTestRows())
@@ -151,7 +168,7 @@ namespace TestingFramework
 
                 // Test Bricks
                 ComboBox cmb = new ComboBox();
-                
+
                 foreach (string str in TestBricksFactory.Instance.ListTestBricks)
                     cmb.Items.Add(str);
 
@@ -172,7 +189,7 @@ namespace TestingFramework
 
                 for (int n = 1; n < nRow; n++)
                     cmb.Items.Add(n);
-              
+
                 cmb.IsEditable = false;
                 cmb.Text = oTest.InputRow.ToString();
                 cmb.SelectionChanged += new SelectionChangedEventHandler(InputRow_SelectionChanged);
@@ -233,6 +250,14 @@ namespace TestingFramework
                 grdData.Children.Add(cb);
                 nCol++;
             }
+        }
+
+        private void CreateDataGrid(bool bWithColumns = true)
+        {
+            if (bWithColumns)
+                CreateColumnDef();
+
+            CreateRowDef();
         }
 
         private void InputString_DoubleClick(object sender, MouseButtonEventArgs e)
@@ -323,7 +348,8 @@ namespace TestingFramework
         {
             _mainModel.NewRow();
 
-            CreateDataGrid();
+            CreateDataGrid(false);
+            btnDelete.IsEnabled = true;
         }
 
         private void btnDel_Click(object sender, RoutedEventArgs e)
@@ -345,8 +371,11 @@ namespace TestingFramework
             if (true == bOk)
             {
                 _mainModel.DeleteRow(wnd.GetFirstValue());
-                CreateDataGrid();
+                CreateDataGrid(false);
             }
+
+            if (_mainModel.GetTestRows().Count <= 1)
+                btnDelete.IsEnabled = false;
         }
 
         private void btnStart_Click(object sender, RoutedEventArgs e)
@@ -369,7 +398,7 @@ namespace TestingFramework
                     oTest.Check = true;
                     MoveOutputToInput(oTest);
 
-                    CreateDataGrid();
+                    CreateDataGrid(false);
                 }
                 else
                 {
@@ -426,7 +455,7 @@ namespace TestingFramework
                 if (!_mainModel.BuildModelFromFile(sPath))
                     MessageBox.Show(this, "Error occured!", "Error on Load", MessageBoxButton.OK, MessageBoxImage.Warning);
                 else
-                    CreateDataGrid();
+                    CreateDataGrid(false);
             }
         }
 

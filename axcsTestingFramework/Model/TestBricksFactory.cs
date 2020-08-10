@@ -15,8 +15,8 @@ namespace TestingFramework.Model
 
             ListTestBricks.Add("OneStep");
             ListTestBricks.Add("FindRegExp");
+
             ListTestBricks.Add("AssertEqual");
-            ListTestBricks.Add("AssertEmpty");
             ListTestBricks.Add("AssertNonEqual");
 
             // Add HERE a new test brick!
