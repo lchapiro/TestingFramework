@@ -1,0 +1,32 @@
+﻿<Window x:Class="TestingFramework.PopUpWnd"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TestingFramework"
+        mc:Ignorable="d"
+        Title="PopUpWnd" Height="150" Width="250" WindowStartupLocation="CenterOwner" 
+        Background="LightBlue" WindowStyle="None">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="10"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="10"/>
+        </Grid.RowDefinitions>
+        <TextBlock x:Name="txtOne" Grid.Column="1" Grid.Row="1" />
+        <ComboBox x:Name="cbxOne" Grid.Column="3" Grid.Row="1" />
+        <Button x:Name="btnOK" Grid.Column="3" Content="OK" Grid.Row="5" Click="btnOK_Click" IsDefault="True"/>
+        <Button x:Name="btnClose" Grid.Column="1" Content="Abbrechen" Grid.Row="5" Click="btnClose_Click" IsDefault="False"/>
+    </Grid>
+</Window>

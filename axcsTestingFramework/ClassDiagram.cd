@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="TestingFramework.Model.Logger" Collapsed="true">
+    <Position X="1.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAACAAAAAAAAAQAAAAAAAQAAAAEEAAAA=</HashCode>
+      <FileName>Model\LoggerSingleton.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TestingFramework.Model.MainWndModel" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="5.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEIAAAAAAAAAEIAACAAAAAAAgAAGBAAAAAAAEAAAAAQ=</HashCode>
+      <FileName>Model\MainWndModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TestingFramework.Model.AssertEqual" Collapsed="true">
+    <Position X="5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\TestBricks\Assertions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TestingFramework.Model.AssertNonEqual" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\TestBricks\Assertions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TestingFramework.Model.FindRegExp" Collapsed="true">
+    <Position X="2.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\TestBricks\FindRegExp.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TestingFramework.Model.OneStep">
+    <Position X="7.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\TestBricks\OneStep.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TestingFramework.Model.TestBricksFactory">
+    <Position X="3.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAAKAAAAAAAAAAAAgAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Model\TestBricksFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TestingFramework.Model.TestClass" Collapsed="true">
+    <Position X="3.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIgAAAgAAAAEAAAAAAAIABQAAAAAAABAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\TestClass.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TestingFramework.Model.WorkerSingleton" Collapsed="true">
+    <Position X="7.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAQACAAAQAAAAAAAgAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Model\WorkerSingleton.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
